@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.eggs/
+*.log
+
+# Jupyter / Colab Notebooks 
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Virtual Environment
+env/
+venv/
+.venv/
+ENV/
+*.env
+
+# Dataset & Model Files 
+water_dataset/
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.csv
+*.pth
+*.pt
+*.h5
+
+# System / Editor Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Output / Cache Files 
+outputs/
+logs/
+runs/
+__results__/
+.cache/
+*.tensorboard/
+
+# VS Code Specific 
+.vscode/
+.history/
+
+# Colab / Google Drive 
+drive/
+MyDrive/
+gdrive/

@@ -76,6 +76,11 @@ The following stages are planned:
 4. Model optimization and visualization
 5. Building a simple user interface for predictions
 
+#### Note:
+
+The dataset folder (clean/polluted/muddy) used for training is not included in this repository due to size limits.
+Dataset can be manually created following the structure shown below.
+
 ---
 
 ## 👩‍💻 Author
