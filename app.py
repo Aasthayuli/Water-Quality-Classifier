@@ -3,9 +3,10 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 from PIL import Image
 import streamlit as st
+from pathlib import Path
+import requests
 
 # Model Definition
-
 class WaterCNN(nn.Module):
     def __init__(self):
         super().__init__()
@@ -28,10 +29,28 @@ class WaterCNN(nn.Module):
 # Model Load
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = WaterCNN().to(device)
-model.load_state_dict(torch.load("water_quality_classifier.pth", map_location=device))
-model.eval()
 
-# Streamlit App UI
+# Use absolute path for model
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "water_quality_classifier.pth"
+
+# Download model if not exists
+if not MODEL_PATH.exists():
+    st.info("Downloading model, please wait...")
+    url = "https://drive.google.com/uc?export=download&id=1HZa06fHFeQaS658o4moL1O_wpobyI61P"
+    response = requests.get(url)
+    with open(MODEL_PATH, "wb") as f:
+        f.write(response.content)
+    st.success("Model downloaded successfully!")
+
+# Make sure file exists before loading
+if MODEL_PATH.exists():
+    model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+    model.eval()
+else:
+    st.error("Failed to download model. Please check the link.")
+
+# ----------------- Streamlit App UI -----------------
 st.title("💧 Water Quality Classifier")
 
 uploaded_file = st.file_uploader("Upload an image of water", type=["jpg", "png", "jpeg"])
