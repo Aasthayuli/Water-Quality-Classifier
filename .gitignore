@@ -20,7 +20,7 @@ ENV/
 *.env
 
 # Dataset & Model Files 
-water_dataset/
+data/water_dataset/
 *.zip
 *.tar
 *.tar.gz

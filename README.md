@@ -1,100 +1,139 @@
-# 💧 Water Quality Classification using CNN
+# 💧 Water Quality Classifier using CNN
 
-### 🌱 Theme: Sustainability
-
-This project focuses on using Deep Learning and Computer Vision techniques to classify **water quality** based on visual features such as color, turbidity, and clarity.
-
----
-
-## 🧠 Problem Statement
-
-With increasing water pollution across the globe, there is a strong need for **automated systems** that can help monitor and assess water quality efficiently.  
-Traditional testing methods require **laboratory analysis**, which can be **time-consuming**, **expensive**, and **not scalable** for large areas.
-
-This project aims to develop a **Convolutional Neural Network (CNN)** model that classifies water images into three categories:
-
-- 🩵 Clean
-- 🟤 Muddy
-- 🖤 Polluted
-
-By leveraging computer vision, the system can enable **faster**, **more affordable**, and **real-time** water quality monitoring, contributing to **environmental sustainability**.
+Welcome to my internship project repository!
+This project focuses on classifying water quality images into three categories — Clean, Muddy, and Polluted — using Deep Learning (CNN).
+The goal was to build a full pipeline: data preprocessing, model design, optimization, and deployment through a Streamlit web app.
 
 ---
 
-## 🎯 Objective
+## 📅 WEEK 1 – Data Collection & Preprocessing
 
-The main objective of this project is to build an intelligent model that can automatically classify water images into Clean, Muddy, and Polluted categories.
+**Objective**: Prepare a structured dataset and clean input for model training.
 
-The project aims to:
+**_Tasks_**:
 
-- Apply **CNNs** for image classification tasks.
-- Use **visual characteristics** (color, turbidity, impurities) to predict water quality.
-- Support **sustainable environmental monitoring** through image analysis.
-- Design a model that can later be integrated with **IoT devices, drones, or mobile apps** for real-time environmental assessment.
+- Collected water-quality images across three classes: Clean, Muddy, and Polluted.
+- Organized dataset into training, testing, and validation folders.
+- Performed image preprocessing:
 
----
+  - Resized images for uniformity.
+  - Applied normalization and data augmentation (rotation, flipping, brightness).
 
-## 🌿 Expected Outcome
+- Visualized sample images from each class for quality check.
+- Created efficient DataLoader pipelines using PyTorch.
 
-- A trained **CNN model** capable of classifying water images into Clean, Muddy, and Polluted categories.
-- A **balanced dataset** containing images from Kaggle and manually collected Google Images.
-- **Training accuracy and loss graphs** to visualize model performance.
-- A small-scale **Flask or Streamlit-based app** (optional) to upload an image and view the predicted result.
-- Contribution toward **environmental sustainability** through AI-powered water quality detection.
+**_Deliverables:_**
 
----
-
-## 📊 Dataset Source
-
-The dataset used in this project is a **combination** of:
-
-1. **Kaggle Dataset:** Publicly available images of clean and polluted water bodies.
-2. **Google Images (Manually Collected):** Additional images, especially for muddy water, downloaded.
-   All images are resized and preprocessed before training the CNN model.  
-   _(Dataset size will be updated after preprocessing.)_
+- data_preprocessing.py
+- Folder structure: train/, test/
+- Preprocessed dataset ready for model training.
 
 ---
 
-## ⚙️ Tech Stack
+## ⚙️ WEEK 2 – Model Design & Training
 
-- **Language:** Python
-- **Libraries:** TensorFlow / Keras, NumPy, OpenCV, Matplotlib, scikit-learn
-- **Model:** Convolutional Neural Network (CNN)
-- **IDE:** Jupyter Notebook / Google Colab
-- **(Optional)** Flask or Streamlit for deployment
+**_Objective_**: Build and train a CNN model to classify water images effectively.
 
----
+**_Tasks_**:
 
-## 🚧 Project Status: _Under Development_
+- Designed a Convolutional Neural Network (CNN) architecture using PyTorch.
+- Defined:
+  - Loss Function: CrossEntropyLoss
+  - Optimizer: Adam
+  - Trained the model across multiple epochs using training and validation datasets.
+  - Monitored model performance via accuracy and loss curves.
+  - Saved trained model weights as water_quality_classifier.pth.
 
-Currently, the project is in the **data collection and preprocessing phase**.  
-The following stages are planned:
+**_Deliverables:_**
 
-1. Dataset cleaning and labeling
-2. Model architecture design (CNN)
-3. Model training and evaluation
-4. Model optimization and visualization
-5. Building a simple user interface for predictions
-
-#### Note:
-
-The dataset folder (clean/polluted/muddy) used for training is not included in this repository due to size limits.
-Dataset can be manually created following the structure shown below.
+- water_cnn_model.py
+- Saved model: water_quality_classifier.pth
+- Training accuracy and loss graphs.
 
 ---
 
-## 👩‍💻 Author
+## 🚀 WEEK 3 – Model Optimization & Streamlit Deployment(ongoing)
 
-**Aasthayuli**  
-B.Tech (Computer Science & Engineering)  
-Global Institute of Technology and Management, Gurugram
+**Objective**: Improve model performance and deploy it as a user-friendly app.
+
+**_Tasks_**:
+
+- Tuned hyperparameters (batch size, learning rate) for better generalization.
+- Added Batch Normalization and Dropout layers.
+- Evaluated performance using:
+- Confusion Matrix
+- Precision, Recall, and F1-score
+- Built a Streamlit-based Web App that:
+- Lets users upload water images.
+- Displays prediction results.
+- Final deployment integrates the model backend with a simple front-end UI.
+
+**_Deliverables:_**
+
+- optimized_model_and_visualization.py
+- app.py – Streamlit app file
+- Final optimized model (water_quality_classifier.pth)
 
 ---
 
-## 🌸 Acknowledgment
+## 🧠 Tech Stack
 
-Special thanks to AICTE and Skills4Future for providing the opportunity to contribute toward sustainable innovation using Artificial Intelligence.
+- Programming Language: Python
+- Libraries: PyTorch, torchvision, NumPy, Matplotlib, Streamlit
+- Tools: Jupyter Notebook, VS Code
+- Version Control: Git & GitHub
 
 ---
 
-⭐ _If you find this project interesting, don’t forget to star the repository!_
+## 🎯 Project Highlights
+
+- Built a complete AI pipeline from data to deployment.
+- Used CNN for image classification with custom dataset.
+- Deployed an interactive web app for real-time predictions.
+- Strong focus on clean code, reproducibility, and explainability.
+
+---
+
+## 📌 Repository Structure
+
+Water_Quality_Classifier/
+│
+├── data/
+│ └── water_dataset/
+│ ├── train/
+│ └── test/
+│
+├── week1_data_preprocessing/
+│ ├── data_preprocessing.py
+│
+├── week2_model_training/
+│ ├── water_cnn_model.py
+│ ├── train_model.py
+│
+├── week3_model_optimization/
+│ ├── app.py
+│ ├── evaluated_model.py
+│ ├── visualize_results.py
+│
+├── outputs/
+│ ├── graphs/
+│ ├── logs/
+│ └── predictions/
+│
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── Problem_Statement.pdf
+
+> **Note:**
+>
+> - `outputs/` stores model visualizations, logs, and predictions.
+> - `app.py` runs the Streamlit-based user interface for the final optimized model.
+
+---
+
+## 🏁 Conclusion
+
+This internship project enhanced my understanding of Deep Learning, Computer Vision, and Model Deployment.
+
+It provided a hands-on experience with real-world data, model optimization techniques, and end-to-end integration using Streamlit.
