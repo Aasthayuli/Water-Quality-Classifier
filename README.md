@@ -97,32 +97,59 @@ The goal was to build a full pipeline: data preprocessing, model design, optimiz
 ## 📌 Repository Structure
 
 Water_Quality_Classifier/
+
 │
+
 ├── data/
+
 │ └── water_dataset/
+
 │ ├── train/
+
 │ └── test/
+
 │
+
 ├── week1_data_preprocessing/
+
 │ ├── data_preprocessing.py
+
 │
+
 ├── week2_model_training/
+
 │ ├── water_cnn_model.py
+
 │ ├── train_model.py
+
 │
+
 ├── week3_model_optimization/
+
 │ ├── app.py
+
 │ ├── evaluated_model.py
+
 │ ├── visualize_results.py
+
 │
+
 ├── outputs/
+
 │ ├── graphs/
+
 │ ├── logs/
+
 │ └── predictions/
+
 │
+
 ├── requirements.txt
+
 ├── README.md
+
 ├── .gitignore
+
 └── Problem_Statement.pdf
 
 > **Note:**
