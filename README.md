@@ -78,6 +78,12 @@ The goal was to build a full pipeline: data preprocessing, model design, optimiz
 
 ---
 
+### 🔗 Trained Model
+
+Download [water_quality_classifier.pth](https://drive.google.com/file/d/1pXSDJB2EfMUPfJeeNkQcAKc2YEE3jDeh/view?usp=sharing)
+
+---
+
 ## 🧠 Tech Stack
 
 - Programming Language: Python
@@ -154,10 +160,13 @@ Water_Quality_Classifier/
 
 └── Problem_Statement.pdf
 
+└── water_quality_classifier.ipynb
+
 > **Note:**
 >
 > - `outputs/` stores model visualizations, logs, and predictions.
 > - `app.py` runs the Streamlit-based user interface for the final optimized model.
+> - `water_quality_classifier.ipynb` is the Jupyter Notebook file for research, experimentation and rapid prototyping.
 
 ---
 
