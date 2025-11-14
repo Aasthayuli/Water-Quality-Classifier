@@ -10,6 +10,8 @@ The goal was to build a full pipeline: data preprocessing, model design, optimiz
 
 **Objective**: Prepare a structured dataset and clean input for model training.
 
+**Dataset Link:** [Click here to download the dataset](https://drive.google.com/drive/folders/1W5GTIHEfQVhZsacwTnReRYffUiE4D2RU?usp=sharing)
+
 **_Tasks_**:
 
 - Collected water-quality images across three classes: Clean, Muddy, and Polluted.
